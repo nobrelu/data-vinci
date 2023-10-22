@@ -1,5 +1,5 @@
 ---
-title: Sub-Category
+title: AWS
 menu:
   sidebar:
     name: Sub-Category

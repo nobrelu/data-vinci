@@ -1,5 +1,5 @@
 ---
-title: Go এর নোট সমূহ
+title: Go এর  Notas
 menu:
   notes:
     name: Go

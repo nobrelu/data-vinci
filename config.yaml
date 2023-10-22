@@ -22,13 +22,13 @@ module:
 languages:
   en:
     languageName: English
-    weight: 1
-  bn:
-    languageName: বাংলা
     weight: 3
+  pt:
+    languageName: Português
+    weight: 1
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
-# DefaultContentLanguage: bn
+#DefaultContentLanguage: pt
 
 # Allow raw html in markdown file
 markup:
@@ -101,6 +101,9 @@ params:
 
     # Enable & configure "Notes" features
     notes:
+      enable: true
+
+    teste:
       enable: true
 
     # Enable comment feature. There, should be only one of them.
