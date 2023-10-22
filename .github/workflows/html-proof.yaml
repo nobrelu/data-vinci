@@ -5,38 +5,27 @@ on: [pull_request]
 
 jobs:
   proof-html:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     # checkout to the commit that has been pushed
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.3.4
       with:
         submodules: true  # Fetch Hugo themes (true OR recursive)
         fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
     
+    # install Hugo
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.6.0
+      uses: peaceiris/actions-hugo@v2.5.0
       with:
         hugo-version: 'latest'
         extended: true
 
-    - name: Update Hugo Modules
-      run: hugo mod tidy
-
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-
-    - name: Install node modules
-      run: |
-        hugo mod npm pack
-        npm install
-
+    # build website
     - name: Build
       run: hugo --minify
-
+    
     # Run HTML Proofer
-    - uses: anishathalye/proof-html@v2.1.0
+    - uses: anishathalye/proof-html@v1.2.0
       with:
         directory: ./public
         enforce_https: false
