@@ -23,12 +23,12 @@ languages:
   en:
     languageName: English
     weight: 3
-  pt:
+  pt-br:
     languageName: Português
     weight: 1
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
-#DefaultContentLanguage: pt
+DefaultContentLanguage: pt-br
 
 # Allow raw html in markdown file
 markup:
